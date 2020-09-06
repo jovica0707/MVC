@@ -1,0 +1,13 @@
+﻿@model List<SEDC.PizzaApp.Models.ViewModels.PizzaViewModel>
+@{ ViewData["Title"] = "Index"; }
+
+<h2>Index</h2>
+<p>Pizzas</p>
+
+@foreach (PizzaViewModel pizza in Model)
+{
+<ul>
+    <li> Name: @pizza.Pizza </li>
+    <li> Size: @pizza.PizzaSize </li>
+    <li> Price: @pizza.Price  </li>
+</ul>
