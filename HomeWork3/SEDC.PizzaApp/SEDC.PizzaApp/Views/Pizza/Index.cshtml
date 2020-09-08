@@ -1,0 +1,25 @@
+﻿///2. Send a list of pizza view models to the Pizaa Index View. Loop through them using a for loop in the view.
+
+
+@model List<PizzaViewModel>
+
+@model Pizza
+@{ ViewData["Title"] = "Index"; }
+
+<h2>Index</h2>
+<p>Pizzas</p>
+
+<span>@ViewData["SharedMessage"]</span>
+
+@section Scripts{
+    <script>
+        window.alert("Hello from Pizza Index View!")
+    </script>
+    <script src=""></script>
+}
+
+@foreach(PizzaViewModel pizza in Model)
+{
+    <for =pizza/>
+}
+
