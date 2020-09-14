@@ -1,0 +1,24 @@
+﻿@model List<SEDC.PizzaApp.Models.ViewModels.OrderDetailsViewModel>
+<h2>@ViewData["Title"]</h2>
+<h4>@ViewData["Message"]</h4>
+
+
+
+<a asp-controller="Order" asp-action="CreateOrder">Create Order</a>
+
+@for(int i=0; i< Model.Count; i++)
+{
+<partial name="~/Views/Shared/Partials/_OrderDetails.cshtml" for="@Model[i]" />
+    @*<a asp-controller="Order" asp-action="Details" asp-route-id="@Model[i].Id">See Details</a>*@
+    @Html.ActionLink("See Details","Details","Order", new {id=@Model[i].Id})
+<a asp-controller="Order" asp-action="EditOrder" asp-route-id="@Model[i].Id">Edit order</a>
+<a asp-controller="Order" asp-action="DeleteOrder" asp-route-id="@Model[i].Id">Delete order</a>
+
+<hr />
+}
+
+<p>@DateTime.Now</p>
+<span>@ViewData["SharedMessage"]</span>
+
+
+
